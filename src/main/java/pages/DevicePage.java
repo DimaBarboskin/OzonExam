@@ -2,10 +2,12 @@ package pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import steps.BaseSteps;
 
@@ -53,6 +55,7 @@ public class DevicePage extends BasePage {
     public void fillBasket(String minPrice){
         for(int i = 0; i<allDevices.size();i++){
             if(i%2==0){
+                waiting(upPrice);
                 fillMinPrice(minPrice);
                 allDevices.get(i).click();
                 addToBasket.click();

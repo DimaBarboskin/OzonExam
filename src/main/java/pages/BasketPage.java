@@ -30,7 +30,10 @@ public class BasketPage extends BasePage{
         WebElement data = BaseSteps.getDriver().findElement(By.xpath("//*[@class = 'eCartControls_infoDate']"));
         Wait<WebDriver> wait = new WebDriverWait(BaseSteps.getDriver(), 20);
         wait.until(ExpectedConditions.visibilityOf(data));
+        Wait<WebDriver> wait1 = new WebDriverWait(BaseSteps.getDriver(), 20);
+        wait1.until(ExpectedConditions.elementToBeClickable(deleteAll));
         new Actions(BaseSteps.getDriver()).moveToElement(deleteAll).click().perform();
+
     }
 
     public void checkTitle(String title){
